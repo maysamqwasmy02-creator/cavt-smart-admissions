@@ -1,31 +1,39 @@
 # CAVT Smart Admissions
 
-A smart admissions and branch administration system built with Flutter and Supabase for the College of Advanced Vocational Training (CAVT).
+A cross-platform smart admissions and branch administration application built with **Flutter** and **Supabase** for the College of Advanced Vocational Training (CAVT).
 
-The application separates the student admissions experience from the administrative portal and routes each application to the correct branch. Branch administrators can review only the applications assigned to their own branch.
+The system separates the applicant experience from the administration portal and routes each application to the correct branch. Branch administrators can access only applications assigned to their own branch.
 
-## Key Features
+## Highlights
 
-### Student Portal
+### Student Experience
 - Student account registration and secure sign-in
-- Browse vocational programs and branches
+- Arabic and English interface
+- Light and dark themes
+- Browse vocational programs
+- Browse CAVT branches
+- Eligibility checker
 - Program recommendation assistant
-- Compare programs
-- Submit admission applications with document uploads
-- Track submitted applications
-- Arabic interface with English language option
-- Light and dark theme support
+- Compare two programs
+- Submit an admission application
+- Upload supporting documents
+- View submitted applications
+- Track application status through the admissions workflow
 
-### Administration Portal
-- Separate administration login
-- Branch-based access control
+### Administration Experience
+- Separate administration portal
+- Branch-based authorization
 - Multiple administrator accounts per branch
-- Branch-specific dashboard
-- Search and filter applications
-- Review and update applications
-- Secure logout
+- Branch dashboard and application statistics
+- Search and filter branch applications
+- Review applicant details
+- Change application status
+- Add reviewer notes
+- View application workflow/history
+- Student accounts blocked from the administration portal
 
 ## Technology Stack
+
 - Flutter
 - Dart
 - Supabase
@@ -37,30 +45,34 @@ The application separates the student admissions experience from the administrat
 
 ## Security Model
 
-The application uses role-based and branch-based authorization. Supabase Row Level Security (RLS) limits administrative access so each branch administrator can access only applications assigned to that branch.
+The backend uses both role-based and branch-based authorization. Supabase Row Level Security restricts staff access so administrators can manage only applications belonging to their assigned branch.
 
-Administrator credentials and private backup files are not stored in this repository.
+Private administrator passwords and backup files are not stored in this repository. Sensitive personal values in portfolio screenshots are redacted.
 
 ## Screenshots
 
-### Entry & Student Experience
+### Portal & Student Experience
 
 <table>
 <tr>
-<td align="center"><strong>Portal Login</strong><br><img src="screenshots/01_portal_login.jpg" width="300"></td>
-<td align="center"><strong>Student Home</strong><br><img src="screenshots/02_student_home.jpg" width="300"></td>
+<td align="center"><strong>Portal Login</strong><br><img src="screenshots/01_portal_login_en.jpg" width="290"></td>
+<td align="center"><strong>Student Home</strong><br><img src="screenshots/02_student_home.jpg" width="290"></td>
 </tr>
 <tr>
-<td align="center"><strong>Programs</strong><br><img src="screenshots/03_programs.jpg" width="300"></td>
-<td align="center"><strong>Program Recommender</strong><br><img src="screenshots/04_program_recommender.jpg" width="300"></td>
+<td align="center"><strong>Programs</strong><br><img src="screenshots/03_programs.jpg" width="290"></td>
+<td align="center"><strong>Branches</strong><br><img src="screenshots/04_branches.jpg" width="290"></td>
 </tr>
 <tr>
-<td align="center"><strong>Compare Programs</strong><br><img src="screenshots/05_compare_programs.jpg" width="300"></td>
-<td align="center"><strong>Branches</strong><br><img src="screenshots/06_branches.jpg" width="300"></td>
+<td align="center"><strong>Eligibility Check</strong><br><img src="screenshots/05_eligibility_check.jpg" width="290"></td>
+<td align="center"><strong>Program Recommender</strong><br><img src="screenshots/06_program_recommender.jpg" width="290"></td>
 </tr>
 <tr>
-<td align="center"><strong>Application Form</strong><br><img src="screenshots/07_application_form.jpg" width="300"></td>
-<td align="center"><strong>My Applications</strong><br><img src="screenshots/08_my_applications.jpg" width="300"></td>
+<td align="center"><strong>Compare Programs</strong><br><img src="screenshots/07_compare_programs.jpg" width="290"></td>
+<td align="center"><strong>Application Form</strong><br><img src="screenshots/08_application_form.jpg" width="290"></td>
+</tr>
+<tr>
+<td align="center"><strong>My Applications</strong><br><img src="screenshots/09_my_applications.jpg" width="290"></td>
+<td align="center"><strong>Application Tracking</strong><br><img src="screenshots/10_application_tracking.jpg" width="290"></td>
 </tr>
 </table>
 
@@ -68,32 +80,55 @@ Administrator credentials and private backup files are not stored in this reposi
 
 <table>
 <tr>
-<td align="center"><strong>Branch Dashboard</strong><br><img src="screenshots/09_admin_dashboard.jpg" width="300"></td>
-<td align="center"><strong>Branch Applications</strong><br><img src="screenshots/10_admin_applications.jpg" width="300"></td>
+<td align="center"><strong>Portal Protection</strong><br><img src="screenshots/11_admin_access_protection.jpg" width="290"></td>
+<td align="center"><strong>Branch Dashboard</strong><br><img src="screenshots/12_admin_dashboard.jpg" width="290"></td>
 </tr>
 <tr>
-<td align="center"><strong>Admin Account</strong><br><img src="screenshots/11_admin_account.jpg" width="300"></td>
-<td></td>
+<td align="center"><strong>Branch Applications</strong><br><img src="screenshots/13_admin_applications.jpg" width="290"></td>
+<td align="center"><strong>Application Review</strong><br><img src="screenshots/14_admin_application_details.jpg" width="290"></td>
+</tr>
+<tr>
+<td align="center"><strong>Status Update</strong><br><img src="screenshots/15_admin_status_update.jpg" width="290"></td>
+<td align="center"><strong>Admin Account</strong><br><img src="screenshots/16_admin_account.jpg" width="290"></td>
 </tr>
 </table>
 
-## Current Status
-Implemented and tested:
-- Authentication
-- Student and administration portals
-- Application submission and tracking
-- Supporting-document upload flow
+## Additional Screenshot
+
+The repository also includes an additional student-home view:
+
+- `screenshots/17_student_home_secondary.jpg`
+
+## Tested Workflow
+
+The project has been tested with:
+- Student authentication
+- Application submission
+- Supporting-document upload
+- Application tracking
+- Status history
+- Separate student/admin portals
 - Branch-specific administration
-- Multiple administrators per branch
+- Multiple administrator accounts per branch
 - Row Level Security enforcement
-- Program browsing, recommendation, and comparison
 
 ## Local Setup
+
 1. Install Flutter.
 2. Clone the repository.
-3. Run `flutter pub get`.
-4. Configure your own Supabase project URL and publishable key.
-5. Run `flutter run`.
+3. Run:
 
-## Disclaimer
-This is a portfolio and development project demonstrating an admissions workflow and branch-based administration system. It does not contain production administrator credentials or private user data.
+```bash
+flutter pub get
+```
+
+4. Configure your own Supabase project URL and publishable key.
+5. Run:
+
+```bash
+flutter run
+```
+
+## Portfolio Note
+
+This repository is a portfolio/development project demonstrating a complete admissions workflow and branch-based administration architecture. It does not include production credentials or private administrator passwords.
